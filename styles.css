@@ -1,0 +1,108 @@
+:root {
+  --sky-top: #bfe7ff;
+  --sky-bottom: #eaf9ee;
+  --soil: #8a5a33;
+  --soil-dark: #6f4525;
+  --ink: #23402a;
+  --card: #fffdf7;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px 16px;
+  font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--ink);
+  background: linear-gradient(180deg, var(--sky-top), var(--sky-bottom));
+}
+
+.garden-card {
+  width: min(560px, 100%);
+  background: var(--card);
+  border-radius: 20px;
+  padding: 28px 28px 20px;
+  box-shadow: 0 12px 40px rgba(35, 64, 42, 0.18);
+  text-align: center;
+}
+
+h1 { margin: 0 0 6px; font-size: 2rem; }
+.tagline { margin: 0 0 20px; opacity: 0.8; }
+
+.scene {
+  position: relative;
+  height: 220px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #aee2ff 0%, #dff6e3 70%, #cdeac0 100%);
+}
+
+.sun {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #ffd94d;
+  box-shadow: 0 0 24px rgba(255, 217, 77, 0.8);
+}
+
+.plant {
+  position: absolute;
+  left: 50%;
+  bottom: 34px;
+  transform: translateX(-50%);
+  line-height: 1;
+  transition: font-size 0.5s ease;
+}
+.plant.stage-0 { font-size: 30px; }
+.plant.stage-1 { font-size: 38px; }
+.plant.stage-2 { font-size: 52px; }
+.plant.stage-3 { font-size: 68px; }
+.plant.stage-4 { font-size: 86px; }
+.plant.watering { animation: wiggle 0.5s ease; }
+
+@keyframes wiggle {
+  0%, 100% { transform: translateX(-50%) rotate(0deg); }
+  30% { transform: translateX(-50%) rotate(-5deg); }
+  60% { transform: translateX(-50%) rotate(5deg); }
+}
+
+.soil {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 38px;
+  background: repeating-linear-gradient(90deg, var(--soil) 0 26px, var(--soil-dark) 26px 52px);
+  border-top: 4px solid var(--soil-dark);
+}
+
+.stage-message { min-height: 1.5em; margin: 16px 0 10px; }
+
+button {
+  font: inherit;
+  font-size: 1.05rem;
+  padding: 10px 26px;
+  border: none;
+  border-radius: 999px;
+  background: #3d9d63;
+  color: #fff;
+  cursor: pointer;
+}
+button:hover { background: #348653; }
+button:active { transform: scale(0.97); }
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin: 20px 0 6px;
+}
+.stats dt { font-size: 0.8rem; opacity: 0.65; }
+.stats dd { margin: 2px 0 0; font-weight: 600; }
+
+footer { font-size: 0.85rem; opacity: 0.75; }
+footer a { color: #2c7a46; }

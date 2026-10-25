@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slow Garden · 慢慢长的花园</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="garden-card">
+    <header>
+      <h1>🌱 Slow Garden</h1>
+      <p class="tagline">一座由代码慢慢长大的花园 —— 每天只长大一点点。</p>
+    </header>
+
+    <section class="scene" aria-label="花园">
+      <div class="sun" aria-hidden="true"></div>
+      <div id="plant" class="plant stage-0" aria-hidden="true">🫘</div>
+      <div class="soil" aria-hidden="true"></div>
+    </section>
+
+    <p id="stage-message" class="stage-message">土里埋着一颗种子，它在等第一场水。</p>
+
+    <div class="actions">
+      <button id="water-btn" type="button">💧 浇水</button>
+    </div>
+
+    <dl class="stats">
+      <div><dt>浇水</dt><dd><span id="water-count">0</span> 次</dd></div>
+      <div><dt>阶段</dt><dd id="stage-name">种子</dd></div>
+      <div><dt>到访</dt><dd><span id="visit-days">1</span> 天</dd></div>
+    </dl>
+
+    <footer>
+      <p>花园的生长进度保存在你自己的浏览器里。代码的生长进度在
+      <a href="https://github.com/Mai1aKi/slow-garden">GitHub 仓库</a> 里，每天一个小提交。</p>
+    </footer>
+  </main>
+  <script src="garden.js"></script>
+</body>
+</html>
