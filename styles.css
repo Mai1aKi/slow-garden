@@ -49,7 +49,30 @@ h1 { margin: 0 0 6px; font-size: 2rem; }
   border-radius: 50%;
   background: #ffd94d;
   box-shadow: 0 0 24px rgba(255, 217, 77, 0.8);
+  transition: opacity 0.5s ease;
 }
+
+.moon {
+  position: absolute;
+  top: 16px;
+  right: 26px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  box-shadow: 10px 4px 0 0 #f5f0d6;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+body.night { background: linear-gradient(180deg, #101a33, #1d2b26); color: #e8ecd9; }
+body.night .garden-card { background: #22302a; }
+body.night .scene { background: linear-gradient(180deg, #16264a 0%, #274036 70%, #2e4630 100%); }
+body.night .sun { opacity: 0; }
+body.night .moon { opacity: 1; }
+body.night footer a { color: #9fd6ae; }
+.actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+#daynight-btn { background: #4a5d8a; }
+#daynight-btn:hover { background: #3c4d74; }
 
 .plant {
   position: absolute;

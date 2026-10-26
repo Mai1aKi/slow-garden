@@ -46,6 +46,19 @@
     visitDaysEl.textContent = days.length;
   }
 
+  var night = load("sg_night", false);
+  var daynightBtn = document.getElementById("daynight-btn");
+  function renderNight() {
+    document.body.classList.toggle("night", night);
+    daynightBtn.textContent = night ? "☀️ 白天" : "🌙 夜晚";
+  }
+  daynightBtn.addEventListener("click", function () {
+    night = !night;
+    save("sg_night", night);
+    renderNight();
+  });
+  renderNight();
+
   document.getElementById("water-btn").addEventListener("click", function () {
     waters += 1;
     save("sg_waters", waters);
