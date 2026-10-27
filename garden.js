@@ -6,10 +6,12 @@
     { min: 1,  emoji: "🌱", name: "破土",   message: "它探出头了！第一片嫩芽向你打招呼。" },
     { min: 4,  emoji: "🌱", name: "发芽",   message: "芽儿站稳了，开始认真晒太阳。" },
     { min: 8,  emoji: "🌿", name: "幼苗",   message: "叶子舒展开来，它已经是一株小苗了。" },
-    { min: 14, emoji: "🪴", name: "茁壮",   message: "它长得很结实。明天，这座花园的代码还会再长大一点。" }
+    { min: 14, emoji: "🪴", name: "茁壮",   message: "它长得很结实。明天，这座花园的代码还会再长大一点。" },
+    { min: 20, emoji: "🪴", name: "开花",   message: "它开花了！第一朵花在微风里轻轻摇。" }
   ];
 
   var plant = document.getElementById("plant");
+  var flower = document.getElementById("flower");
   var message = document.getElementById("stage-message");
   var waterCountEl = document.getElementById("water-count");
   var stageNameEl = document.getElementById("stage-name");
@@ -40,6 +42,7 @@
     var st = stageFor(waters);
     plant.textContent = st.def.emoji;
     plant.className = "plant stage-" + st.index;
+    flower.classList.toggle("bloom", st.index === STAGES.length - 1);
     message.textContent = st.def.message;
     waterCountEl.textContent = waters;
     stageNameEl.textContent = st.def.name;

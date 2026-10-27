@@ -87,6 +87,58 @@ body.night footer a { color: #9fd6ae; }
 .plant.stage-2 { font-size: 52px; }
 .plant.stage-3 { font-size: 68px; }
 .plant.stage-4 { font-size: 86px; }
+.plant.stage-5 { font-size: 86px; }
+
+.flower {
+  position: absolute;
+  left: 50%;
+  bottom: 104px;
+  width: 54px;
+  height: 54px;
+  opacity: 0;
+  transform: translateX(-50%) scale(0);
+  transform-origin: 50% 100%;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+.flower.bloom {
+  opacity: 1;
+  animation: sway 3s ease-in-out infinite;
+}
+.flower .petal {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ff8fb3;
+}
+.flower .petal-1 { top: 0; left: 16px; }
+.flower .petal-2 { top: 12px; left: 0; }
+.flower .petal-3 { top: 12px; right: 0; }
+.flower .petal-4 { bottom: 2px; left: 7px; }
+.flower .petal-5 { bottom: 2px; right: 7px; }
+.flower .center {
+  position: absolute;
+  top: 17px;
+  left: 17px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffd94d;
+}
+.flower .stem {
+  position: absolute;
+  top: 52px;
+  left: 26px;
+  width: 3px;
+  height: 30px;
+  background: #3d9d63;
+}
+
+@keyframes sway {
+  0%, 100% { transform: translateX(-50%) scale(1) rotate(-4deg); }
+  50% { transform: translateX(-50%) scale(1) rotate(4deg); }
+}
 .plant.watering { animation: wiggle 0.5s ease; }
 
 @keyframes wiggle {
