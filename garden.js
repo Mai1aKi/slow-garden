@@ -62,12 +62,27 @@
   });
   renderNight();
 
-  document.getElementById("water-btn").addEventListener("click", function () {
+  function waterOnce() {
     waters += 1;
     save("sg_waters", waters);
     render();
     plant.classList.add("watering");
     setTimeout(function () { plant.classList.remove("watering"); }, 550);
+  }
+
+  document.getElementById("water-btn").addEventListener("click", waterOnce);
+
+  var rainEl = document.getElementById("rain");
+  document.getElementById("rain-btn").addEventListener("click", function () {
+    for (var i = 0; i < 24; i++) {
+      var drop = document.createElement("span");
+      drop.className = "rain-drop";
+      drop.style.left = Math.random() * 100 + "%";
+      drop.style.animationDelay = (Math.random() * 0.4) + "s";
+      rainEl.appendChild(drop);
+    }
+    waterOnce();
+    setTimeout(function () { rainEl.innerHTML = ""; }, 1500);
   });
 
   render();

@@ -73,6 +73,27 @@ body.night footer a { color: #9fd6ae; }
 .actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
 #daynight-btn { background: #4a5d8a; }
 #daynight-btn:hover { background: #3c4d74; }
+#rain-btn { background: #4a90c2; }
+#rain-btn:hover { background: #3a78a8; }
+
+.rain {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.rain-drop {
+  position: absolute;
+  top: -14px;
+  width: 2px;
+  height: 12px;
+  border-radius: 2px;
+  background: rgba(90, 160, 220, 0.85);
+  animation: rain-fall 0.9s linear forwards;
+}
+@keyframes rain-fall {
+  to { transform: translateY(240px); opacity: 0.3; }
+}
 
 .plant {
   position: absolute;
